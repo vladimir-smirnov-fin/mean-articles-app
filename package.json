@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "cd front-end-app && npm install && ng build",
+    "build": "cd front-end-app && npm install && npx ng build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
