@@ -71,7 +71,7 @@ app.use('/posts', posts);
 
 // Важно: этот обработчик должен быть ПОСЛЕ всех API-маршрутов!
 // Он перенаправляет все неизвестные запросы на Angular-приложение
-app.get('/*', (req, res) => {
+app.get((req, res) => {
   res.sendFile(path.join(__dirname, 'public/browser/index.html'));
 });
 
