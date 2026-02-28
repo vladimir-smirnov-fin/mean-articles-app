@@ -1,0 +1,16 @@
+# Node dependencies (корневые)
+/node_modules
+
+# Environment variables
+.env
+
+# Angular build output (вся папка public)
+/public
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

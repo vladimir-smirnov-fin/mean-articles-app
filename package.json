@@ -1,0 +1,26 @@
+{
+  "name": "mean-project1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "cd front-end-app && npm install && ng build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "dotenv": "^17.3.1",
+    "express": "*",
+    "express-session": "^1.19.0",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Vladimir Smirnov",
+  "license": "ISC",
+  "description": ""
+}
