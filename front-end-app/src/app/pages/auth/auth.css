@@ -1,0 +1,36 @@
+/* Минимальные правки для мобильных устройств */
+@media (max-width: 576px) {
+  /* Уменьшаем отступы на телефонах */
+  h1.text-center {
+    font-size: 1.75rem;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Немного уменьшаем размер шрифта в форме */
+  .form-group label {
+    font-size: 0.95rem;
+  }
+  
+  .form-control {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Кнопка на всю ширину уже есть (btn-block), но добавим чуть больше отступа */
+  .btn-block {
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+  }
+  
+  /* Сообщения об ошибках */
+  .invalid-feedback small {
+    font-size: 0.8rem;
+  }
+}
+
+/* Для планшетов - практически ничего не меняем */
+@media (min-width: 577px) and (max-width: 767px) {
+  .form-group label {
+    font-size: 1rem;
+  }
+}

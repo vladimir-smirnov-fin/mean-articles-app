@@ -1,0 +1,28 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  
+  <!-- Логотип - слева на десктопе, сверху на мобильных -->
+  <h5 class="my-0 mr-md-auto font-weight-normal text-center text-md-left">itProger</h5>
+  
+  <!-- Навигация - простая и понятная -->
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" [routerLink]="['/']">Home</a>
+  </nav>
+  
+  <!-- Если пользователь авторизован -->
+  <div *ngIf="regAuth.isLoggedIn()" class="d-flex flex-column flex-sm-row">
+    <a class="btn btn-outline-warning mb-2 mb-sm-0 mr-sm-2" [routerLink]="['/dashboard']">
+      Dashboard
+    </a>
+  </div>
+  
+  <!-- Если пользователь НЕ авторизован -->
+  <div *ngIf="!regAuth.isLoggedIn()" class="d-flex flex-column flex-sm-row">
+    <a class="btn btn-outline-primary mb-2 mb-sm-0 mr-sm-2" [routerLink]="['/auth']">
+      Login
+    </a>
+    <a class="btn btn-outline-primary" [routerLink]="['/reg']">
+      Register
+    </a>
+  </div>
+  
+</div>

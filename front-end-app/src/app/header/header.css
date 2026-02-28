@@ -1,0 +1,14 @@
+/* Минимум CSS только для адаптации */
+@media (max-width: 576px) {
+  .btn {
+    width: 100%; /* Кнопки на всю ширину на маленьких экранах */
+    margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+  .btn {
+    padding: 0.25rem 0.5rem; /* Чуть меньше кнопки на планшетах */
+    font-size: 0.9rem;
+  }
+}

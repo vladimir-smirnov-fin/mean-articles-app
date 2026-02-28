@@ -1,0 +1,75 @@
+<h1 class="text-center mb-4">Add New Article</h1>
+
+<form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)" class="col-11 col-md-8 col-lg-6 mx-auto">
+
+  <!-- Поле для заголовка статьи -->
+  <div class="form-group">
+    <label>Article Title</label>
+    <input 
+      type="text" 
+      class="form-control" 
+      [class.is-invalid]="submitted && titleRef.invalid"
+      name="title" 
+      [(ngModel)]="title" 
+      #titleRef="ngModel"
+      placeholder="Enter article title" 
+      required 
+      minlength="5"
+      maxlength="100">
+    <div *ngIf="submitted && titleRef.invalid" class="invalid-feedback d-block">
+      <small *ngIf="titleRef.errors?.['required']">Title is required</small>
+      <small *ngIf="titleRef.errors?.['minlength']">Title must be at least 5 characters</small>
+      <small *ngIf="titleRef.errors?.['maxlength']">Title cannot exceed 100 characters</small>
+    </div>
+  </div>
+
+  <!-- Поле для анонса статьи -->
+  <div class="form-group">
+    <label>Article Summary</label>
+    <textarea 
+      class="form-control" 
+      [class.is-invalid]="submitted && anonsRef.invalid"
+      name="anons" 
+      [(ngModel)]="anons" 
+      #anonsRef="ngModel"
+      placeholder="Enter a brief summary of the article" 
+      rows="3"
+      required 
+      minlength="10"
+      maxlength="200"></textarea>
+    <div *ngIf="submitted && anonsRef.invalid" class="invalid-feedback d-block">
+      <small *ngIf="anonsRef.errors?.['required']">Summary is required</small>
+      <small *ngIf="anonsRef.errors?.['minlength']">Summary must be at least 10 characters</small>
+      <small *ngIf="anonsRef.errors?.['maxlength']">Summary cannot exceed 200 characters</small>
+    </div>
+  </div>
+
+  <!-- Поле для текста статьи -->
+  <div class="form-group">
+    <label>Article Content</label>
+    <textarea 
+      class="form-control" 
+      [class.is-invalid]="submitted && textRef.invalid"
+      name="text" 
+      [(ngModel)]="text" 
+      #textRef="ngModel"
+      placeholder="Enter the full article content" 
+      rows="8"
+      required 
+      minlength="20"
+      maxlength="5000"></textarea>
+    <div *ngIf="submitted && textRef.invalid" class="invalid-feedback d-block">
+      <small *ngIf="textRef.errors?.['required']">Content is required</small>
+      <small *ngIf="textRef.errors?.['minlength']">Content must be at least 20 characters</small>
+      <small *ngIf="textRef.errors?.['maxlength']">Content cannot exceed 5000 characters</small>
+    </div>
+  </div>
+
+  <!-- Кнопка отправки -->
+  <button type="submit" class="btn btn-success btn-block">Add Article</button>
+</form>
+
+<!-- Блок для сообщений -->
+<div *ngIf="message" class="alert mt-4 text-center col-11 col-md-8 col-lg-6 mx-auto" [class.alert-success]="messageType === 'success'" [class.alert-danger]="messageType === 'danger'" role="alert">
+  {{ message }}
+</div>

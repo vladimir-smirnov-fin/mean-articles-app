@@ -1,0 +1,32 @@
+/* Минимальные правки для мобильных устройств */
+@media (max-width: 576px) {
+  /* Уменьшаем отступы в jumbotron */
+  .jumbotron {
+    padding: 2rem 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Уменьшаем заголовок */
+  .jumbotron h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Делаем приветствие чуть меньше */
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  /* Кнопка на всю ширину на телефонах */
+  .btn-lg {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Для планшетов - кнопка не на всю ширину */
+@media (min-width: 577px) and (max-width: 767px) {
+  .jumbotron {
+    padding: 3rem 1rem !important;
+  }
+}

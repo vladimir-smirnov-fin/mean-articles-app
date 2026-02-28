@@ -1,0 +1,12 @@
+<div class="jumbotron text-center">
+  <h1>Dashboard</h1>
+  <p class="lead" *ngIf="userName">Welcome, {{ userName }}!</p>
+  <hr class="my-4">
+  <p>This is your personal dashboard. User information will be displayed here.</p>
+  <button class="btn btn-warning btn-lg btn-block" (click)="logoutUser()">Logout</button>
+</div>
+
+<!-- Простой блок для сообщения -->
+<div *ngIf="message" class="alert alert-warning mt-4 text-center col-11 col-md-8 col-lg-6 mx-auto" role="alert">
+  {{ message }}
+</div>

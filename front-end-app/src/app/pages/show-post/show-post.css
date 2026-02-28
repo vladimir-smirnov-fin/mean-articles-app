@@ -1,0 +1,33 @@
+/* Только самое необходимое для адаптации */
+@media (max-width: 576px) {
+  /* Уменьшаем отступы на телефонах */
+  .container.mt-4 {
+    margin-top: 0.5rem !important;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Немного уменьшаем шрифт заголовка */
+  .h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* Делаем отступ для текста */
+  .lead {
+    font-size: 1rem;
+  }
+  
+  /* Кнопка удаления на всю ширину на очень маленьких экранах */
+  @media (max-width: 360px) {
+    .btn-danger {
+      width: 100%;
+    }
+  }
+}
+
+/* Для планшетов - почти ничего не меняем */
+@media (min-width: 577px) and (max-width: 767px) {
+  .container.mt-4 {
+    max-width: 95%;
+  }
+}

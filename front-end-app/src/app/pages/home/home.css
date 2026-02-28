@@ -1,0 +1,40 @@
+/* Адаптация для мобильных устройств */
+@media (max-width: 576px) {
+  /* Уменьшаем размер шрифта заголовка на телефонах */
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  /* Убираем лишние отступы */
+  .p-3.p-md-5 {
+    padding: 1rem !important;
+  }
+  
+  /* Карточки статей */
+  .card-body {
+    padding: 1rem;
+  }
+  
+  /* Заголовок последние статьи */
+  h2.text-center {
+    font-size: 1.5rem;
+  }
+  
+  /* Заголовки в нижних блоках */
+  .display-5 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Для планшетов */
+@media (min-width: 577px) and (max-width: 767px) {
+  /* Немного уменьшаем заголовок */
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  /* Корректируем отступы */
+  .p-3.p-md-5 {
+    padding: 2rem !important;
+  }
+}

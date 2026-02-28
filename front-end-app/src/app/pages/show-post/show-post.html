@@ -1,0 +1,75 @@
+<!-- Блок загрузки -->
+<div *ngIf="loading" class="text-center mt-5">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <p class="mt-2">Loading article...</p>
+</div>
+
+<!-- Блок ошибки -->
+<div *ngIf="error" class="container mt-5">
+  <div class="alert alert-danger text-center col-11 col-md-8 col-lg-6 mx-auto" role="alert">
+    <h4 class="alert-heading">Error!</h4>
+    <p>{{ error }}</p>
+    <hr>
+    <a [routerLink]="['/']" class="btn btn-primary">Back to Home</a>
+  </div>
+</div>
+
+<!-- Вывод статьи -->
+<div class="container mt-4" *ngIf="!loading && !error && post">
+  <!-- Кнопка назад -->
+  <button class="btn btn-outline-secondary mb-4" (click)="goBack()">
+    ← Back to Articles
+  </button>
+
+  <!-- Карточка статьи -->
+  <div class="card shadow">
+    <div class="card-header bg-primary text-white d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center">
+      <h1 class="h3 mb-2 mb-sm-0">{{ post.title }}</h1>
+      
+      <!-- Кнопка удаления -->
+      <button class="btn btn-danger btn-sm align-self-start align-self-sm-center" 
+              (click)="deletePost()" 
+              [disabled]="isDeleting">
+        <span *ngIf="!isDeleting">Delete Article</span>
+        <span *ngIf="isDeleting">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Deleting...
+        </span>
+      </button>
+    </div>
+    
+    <div class="card-body">
+      <!-- Сообщение об удалении -->
+      <div *ngIf="deleteMessage" class="alert" 
+           [class.alert-success]="deleteMessageType === 'success'"
+           [class.alert-danger]="deleteMessageType === 'danger'" 
+           role="alert">
+        {{ deleteMessage }}
+      </div>
+      
+      <!-- Информация о статье -->
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4 text-muted small">
+        <span class="mb-1 mb-sm-0">
+          Author: {{ post.author || 'Anonymous' }}
+        </span>
+        <span>
+          {{ formatDate(post.date) }}
+        </span>
+      </div>
+      
+      <!-- Анонс -->
+      <div class="alert alert-info">
+        <h5 class="alert-heading">Summary:</h5>
+        <p class="mb-0">{{ post.anons }}</p>
+      </div>
+      
+      <!-- Полный текст -->
+      <div class="mt-4">
+        <h5>Full Article:</h5>
+        <p class="lead" style="white-space: pre-wrap;">{{ post.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
